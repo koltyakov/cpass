@@ -1,6 +1,6 @@
 {
   "name": "cpass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple secure string password convertor",
   "main": "./src/index.js",
   "scripts": {

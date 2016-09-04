@@ -35,6 +35,6 @@ var unblablabla = cpass.decode(blablabla);
 
 ## Comments
 
-This module is not to a real security. Just for 'dummy hackers' secure and minifying risks of any password storage in a plain form.
+This module is not for a real security purposes. Just for 'dummy hackers' secure and minifying risks of any password storage in a plain form.
 
-Once encoded, the password secured form can be decoded only on the same machine.
+Once encoded, the password secured form can be decoded only on the same machine, but the logic behind this is very straightforward.
