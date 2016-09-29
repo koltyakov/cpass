@@ -3,6 +3,7 @@
 [![NPM](https://nodei.co/npm/cpass.png?mini=true&downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cpass/)
 
 [![npm version](https://badge.fury.io/js/cpass.svg)](https://badge.fury.io/js/cpass)
+[![Downloads](https://img.shields.io/npm/dm/cpass.svg)](https://www.npmjs.com/package/cpass)
 
 > Encrypts password to some sort of a 'secure string' to be stored in text configs to reduce risks of a silly leak.<br>
 Decripts a 'secure string' to plain password.
