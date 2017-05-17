@@ -1,0 +1,5 @@
+.vscode
+/test
+npm-debug.log
+/src
+!/dist
