@@ -4,7 +4,6 @@ const gulp = require('gulp');
 const merge = require('merge-stream');
 const tslint = require('gulp-tslint');
 const tsc = require('gulp-typescript');
-const uglify = require('gulp-uglify');
 
 const tsconfig = require('./tsconfig.json');
 
@@ -19,7 +18,7 @@ gulp.task('prepublish', ['clean'], () => {
         .pipe(tsc.createProject('tsconfig.json')());
 
     return merge[
-        tsSourcesResult.js.pipe(uglify()).pipe(gulp.dest('./dist')),
+        tsSourcesResult.js.pipe(gulp.dest('./dist')),
         tsSourcesResult.dts.pipe(gulp.dest('./dist'))
     ];
 });

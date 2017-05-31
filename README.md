@@ -1,4 +1,4 @@
-# cpass - secured password simplified conversion
+# cpass - simplified secured password two-ways encryption
 
 [![NPM](https://nodei.co/npm/cpass.png?mini=true&downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cpass/)
 
@@ -12,26 +12,54 @@ Decripts a 'secure string' to plain password.
 ## Installation
 
 ```bash
-npm install --save-dev cpass
+npm install cpass --save-dev
+```
+
+or 
+
+```bash
+yarn add cpass
 ```
 
 ## Usage
 
+### JavaScript
+
 ```javascript
-var Cpass = require("cpass");
-var cpass = new Cpass();
+const Cpass = require('cpass').Cpass;
+const cpass = new Cpass();
 
-var password = "password";
+const password = 'password';
 
-var secured = cpass.encode(password);
+let secured = cpass.encode(password);
 // secured: "40bbb043608f54d....MhKghXTcaR2A//yNXg==" - is unique on different machines
 
-var unsecured = cpass.decode(secured);
-// unsecured: "password"
+let unsecured = cpass.decode(secured);
+// unsecured: 'password'
+```
 
-var blablabla = "blablabla";
-var unblablabla = cpass.decode(blablabla);
-// unblablabla: "blablabla"
+### TypeScript
+
+```javascript
+import { Cpass } from 'cpass';
+const cpass = new Cpass();
+
+const password = 'password';
+
+let secured = cpass.encode(password);
+// secured: "40bbb043608f54d....MhKghXTcaR2A//yNXg==" - is unique on different machines
+
+let unsecured = cpass.decode(secured);
+// unsecured: 'password'
+```
+
+Decoding plain text will return it back:
+
+```javascript
+let plainText = 'plain (not encoded text)';
+let decodedText = cpass.decode(plainText);
+// decodedText: 'plain (not encoded text)'
+// plainText === decodedText
 ```
 
 ## Comments
