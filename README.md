@@ -62,6 +62,13 @@ let decodedText = cpass.decode(plainText);
 // plainText === decodedText
 ```
 
+### Encryption with master key
+
+```javascript
+import { Cpass } from 'cpass';
+const cpass = new Cpass('MasterKey');
+```
+
 ## Comments
 
 This module is not for a real security purposes. Just for 'dummy hackers' secure and minifying risks of any password storage in a plain form.
