@@ -82,12 +82,12 @@ describe(`Cpass tests`, () => {
 
         it(`should use machineId with priority`, function(): void {
             let original = 'plain_password';
-            let mId = machineIdSync(false);
+            let mId = machineIdSync(true);
             const cpass1 = new Cpass(mId);
-            const cpass2 = new Cpass('Key');
+            const cpass2 = new Cpass();
             let encoded = cpass1.encode(original);
             let decoded = cpass2.decode(encoded);
-            expect(decoded).is.equal(encoded);
+            expect(decoded).is.equal(original);
         });
 
         it(`should decode by a precific key`, function(): void {
