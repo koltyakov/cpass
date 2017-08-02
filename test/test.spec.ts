@@ -24,7 +24,7 @@ describe(`Cpass tests`, () => {
                 expect(encoded).not.equal(original);
             });
 
-            it(`should decode to original`, function(): void {
+            it(`should decode to the original`, function(): void {
                 let original = 'password';
                 let encoded = cpass.encode(original);
                 let decoded = cpass.decode(encoded);
@@ -90,7 +90,7 @@ describe(`Cpass tests`, () => {
             expect(decoded).is.equal(original);
         });
 
-        it(`should decode by a precific key`, function(): void {
+        it(`should decode by a specific key`, function(): void {
             let original = 'plain_password';
             let encoded = '6230a961ee20ecc45d40cbf55b777e086b47044850a8c30' +
                           'f446b32fa2b0a97f3897e034bf3e04cd891e1f3c13730c6' +
