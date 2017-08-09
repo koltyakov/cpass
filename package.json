@@ -6,7 +6,8 @@
   "typings": "./dist/index",
   "scripts": {
     "build": "gulp prepublish",
-    "test": "mocha --opts test/mocha.opts || ECHO."
+    "test": "mocha --opts test/mocha.opts || ECHO.",
+    "upgrade": "ncu --upgrade --upgradeAll && yarn upgrade"
   },
   "repository": {
     "type": "git",
@@ -30,20 +31,20 @@
     "simple-encryptor": "^1.1.0"
   },
   "devDependencies": {
-    "@types/chai": "^3.5.2",
+    "@types/chai": "^4.0.2",
     "@types/mocha": "^2.2.41",
-    "@types/node": "^6.0.73",
-    "del": "^2.2.2",
+    "@types/node": "^8.0.20",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp-tslint": "^8.0.0",
-    "gulp-typescript": "^3.1.6",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.1",
     "merge-stream": "^1.0.1",
-    "ts-node": "^3.0.4",
-    "tslint": "^5.2.0",
-    "typescript": "^2.3.2",
-    "yargs": "^8.0.1",
-    "chai": "^4.0.0",
-    "mocha": "^3.4.2"
+    "ts-node": "^3.3.0",
+    "tslint": "^5.6.0",
+    "typescript": "^2.4.2",
+    "yargs": "^8.0.2",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
   }
 }
