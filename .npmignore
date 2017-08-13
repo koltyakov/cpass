@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 !/dist
 .vscode
 /test
 npm-debug.log
 /src
+=======
+!/dist
+.vscode
+/test
+npm-debug.log
+/src
+/docker
+>>>>>>> dev

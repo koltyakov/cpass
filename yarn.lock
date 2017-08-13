@@ -19,9 +19,9 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-"@types/chai@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.2.tgz#cce9666f5ee2fa27ffd505d2dfaf53bb02ed2584"
+"@types/chai@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.3.tgz#6c2264b195cd2bb4c95c108487e13df0c8567c3e"
 
 "@types/mocha@^2.2.41":
   version "2.2.41"
@@ -257,10 +257,6 @@ cross-spawn@^5.0.1:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-crypto@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/crypto/-/crypto-0.0.3.tgz#470a81b86be4c5ee17acc8207a1f5315ae20dbb0"
-
 css@2.X, css@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/css/-/css-2.2.1.tgz#73a4c81de85db664d4ee674f7d47085e3b2d55dc"
@@ -383,8 +379,8 @@ error-ex@^1.2.0:
     is-arrayish "^0.2.1"
 
 es5-ext@^0.10.13, es5-ext@^0.10.14, es5-ext@^0.10.9, es5-ext@~0.10.14, es5-ext@~0.10.2:
-  version "0.10.26"
-  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.26.tgz#51b2128a531b70c4f6764093a73cbebb82186372"
+  version "0.10.27"
+  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.27.tgz#bf926b058c62b1cb5de1a887930673b6aa6d9a66"
   dependencies:
     es6-iterator "2"
     es6-symbol "~3.1"
