@@ -1,12 +1,13 @@
 {
   "name": "cpass",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simplified secured password two-ways encryption",
   "main": "./dist/index.js",
   "typings": "./dist/index",
   "scripts": {
     "build": "gulp prepublish",
-    "test": "mocha --opts test/mocha.opts || ECHO."
+    "test": "mocha --opts test/mocha.opts || ECHO.",
+    "upgrade": "ncu --upgrade --upgradeAll && yarn upgrade"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,6 @@
   },
   "homepage": "https://github.com/koltyakov/cpass#readme",
   "dependencies": {
-    "crypto": "0.0.3",
     "os": "^0.1.1",
     "simple-encryptor": "^1.1.0"
   },
