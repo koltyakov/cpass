@@ -69,6 +69,23 @@ import { Cpass } from 'cpass';
 const cpass = new Cpass('MasterKey');
 ```
 
+## Tests
+
+### Local run
+
+```bash
+npm run test
+```
+
+### Run in Docker for specific Node.js version
+
+```bash
+# Build an image
+docker build -f ./docker/Dockerfile.node8 -t cpass.node8 .
+# Run tests
+docker run cpass.node8
+```
+
 ## Comments
 
 This module is not for a real security purposes. Just for 'dummy hackers' secure and minifying risks of any password storage in a plain form.

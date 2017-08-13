@@ -38,3 +38,17 @@ docker rmi 8ef72
 ```
 
 (first image guid symbols)
+
+
+### Build and run all at once
+
+```bash
+docker build -f ./docker/Dockerfile.node8 -t cpass.node8 .
+docker build -f ./docker/Dockerfile.node7 -t cpass.node7 .
+docker build -f ./docker/Dockerfile.node6 -t cpass.node6 .
+docker build -f ./docker/Dockerfile.node4 -t cpass.node4 .
+docker run cpass.node8
+docker run cpass.node7
+docker run cpass.node6
+docker run cpass.node4
+```
