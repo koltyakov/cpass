@@ -4,3 +4,6 @@
 npm-debug.log
 /src
 /docker
+gulpfile.json
+tsconfig.json
+tslint.json
