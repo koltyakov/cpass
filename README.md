@@ -5,7 +5,8 @@
 [![npm version](https://badge.fury.io/js/cpass.svg)](https://badge.fury.io/js/cpass)
 [![Downloads](https://img.shields.io/npm/dm/cpass.svg)](https://www.npmjs.com/package/cpass)
 
-> Encrypts password to some sort of a 'secure string' to be stored in text configs to reduce risks of a silly leak.<br>
+> Encrypts password to some sort of a 'secure string' to be stored in text configs to reduce risks of a silly leak.
+
 Decripts a 'secure string' to plain password.
 
 ## Installation
