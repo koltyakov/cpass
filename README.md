@@ -8,17 +8,16 @@
 > Encrypts password to some sort of a 'secure string' to be stored in text configs to reduce risks of a silly leak.<br>
 Decripts a 'secure string' to plain password.
 
-
 ## Installation
 
 ```bash
 npm install cpass --save-dev
 ```
 
-or 
+or
 
 ```bash
-yarn add cpass
+yarn add cpass --dev
 ```
 
 ## Usage
