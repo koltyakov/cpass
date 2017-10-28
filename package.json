@@ -1,6 +1,6 @@
 {
   "name": "cpass",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Simplified secured password two-ways encryption",
   "main": "./dist/index.js",
   "typings": "./dist/index",
