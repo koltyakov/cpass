@@ -1,13 +1,12 @@
 {
   "name": "cpass",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Simplified secured password two-ways encryption",
   "main": "./dist/index.js",
   "typings": "./dist/index",
   "scripts": {
-    "build": "gulp prepublish",
-    "test": "mocha --opts test/mocha.opts || ECHO.",
-    "upgrade": "ncu --upgrade --upgradeAll && yarn upgrade"
+    "build": "rm -rf ./dist && tsc -p .",
+    "test": "mocha --opts test/mocha.opts || ECHO."
   },
   "repository": {
     "type": "git",
@@ -27,24 +26,17 @@
   "homepage": "https://github.com/koltyakov/cpass#readme",
   "dependencies": {
     "os": "^0.1.1",
-    "simple-encryptor": "^1.1.1"
+    "simple-encryptor": "^1.4.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.44",
-    "@types/node": "^8.0.47",
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.3",
+    "@types/node": "^10.5.0",
     "chai": "^4.1.2",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-tslint": "^8.1.2",
-    "gulp-typescript": "^3.2.3",
-    "merge-stream": "^1.0.1",
-    "mocha": "^4.0.1",
-    "ts-node": "^3.3.0",
-    "tslint": "^5.8.0",
-    "tslint-config-standard": "^7.0.0",
-    "typescript": "^2.5.3",
-    "yargs": "^10.0.3"
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.1.0",
+    "typescript": "^2.9.2"
   }
 }
