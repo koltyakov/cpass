@@ -1,4 +1,3 @@
-import { createHash } from 'crypto';
 import * as simple from 'simple-encryptor';
 
 import { hash } from './utils/common';
@@ -16,20 +15,17 @@ export class Cpass {
     } else {
       this.machineId = this.getMachineId();
     }
+    this.encryptor = this.encryptor || simple(this.machineId);
   }
 
   public encode (unsecured: string): string {
     let secured: string;
-    this.machineId = this.machineId || this.getMachineId();
-    this.encryptor = this.encryptor || simple(this.machineId);
     secured = this.encryptor.encrypt(unsecured);
     return secured;
   }
 
   public decode (secured: string): string {
     let unsecured: string;
-    this.machineId = this.machineId || this.getMachineId();
-    this.encryptor = this.encryptor || simple(this.machineId);
     unsecured = this.encryptor.decrypt(secured);
     return unsecured || secured;
   }
