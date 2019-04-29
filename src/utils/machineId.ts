@@ -3,7 +3,7 @@ import { hash } from './common';
 
 const platforms = {
   darwin: 'ioreg -rd1 -c IOPlatformExpertDevice',
-  ia32: '%windir%\\sysnative\\cmd.exe \/c %windir%\\System32\\REG ' +
+  ia32: '%windir%\\System32\\cmd.exe \/c %windir%\\System32\\REG ' +
   'QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography ' +
   '/v MachineGuid',
   x64: '%windir%\\System32\\REG ' +
