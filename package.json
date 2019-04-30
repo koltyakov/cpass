@@ -1,6 +1,6 @@
 {
   "name": "cpass",
-  "version": "2.0.5",
+  "version": "2.1.0-beta1",
   "description": "Simplified secured password two-ways encryption",
   "main": "./dist/index.js",
   "typings": "./dist/index",
@@ -25,17 +25,17 @@
   },
   "homepage": "https://github.com/koltyakov/cpass#readme",
   "dependencies": {
-    "simple-encryptor": "^1.4.0"
+    "simple-encryptor": "^3.0.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.4",
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.7.1",
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "tslint-config-standard": "^7.1.0",
-    "typescript": "^3.0.1"
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.8",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.4.5"
   }
 }

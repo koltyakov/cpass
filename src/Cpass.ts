@@ -15,7 +15,7 @@ export class Cpass {
     } else {
       this.machineId = this.getMachineId();
     }
-    this.encryptor = this.encryptor || simple(this.machineId);
+    this.encryptor = this.encryptor || (simple as any)(this.machineId);
   }
 
   public encode (unsecured: string): string {
