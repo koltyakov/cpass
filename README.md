@@ -3,8 +3,8 @@
 [![NPM](https://nodei.co/npm/cpass.png?mini=true&downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cpass/)
 
 [![npm version](https://badge.fury.io/js/cpass.svg)](https://badge.fury.io/js/cpass)
-[![Build Status](https://dev.azure.com/koltyakov/SPNode/_apis/build/status/cpass?branchName=master)](https://dev.azure.com/koltyakov/SPNode/_build/latest?definitionId=5&branchName=master)
 [![Downloads](https://img.shields.io/npm/dm/cpass.svg)](https://www.npmjs.com/package/cpass)
+[![Build Status](https://dev.azure.com/koltyakov/SPNode/_apis/build/status/cpass?branchName=master)](https://dev.azure.com/koltyakov/SPNode/_build/latest?definitionId=5&branchName=master)
 
 > Encrypts password to some sort of a 'secure string' to be stored in text configs to reduce risks of a silly leak.
 
