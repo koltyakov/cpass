@@ -3,9 +3,10 @@ import { hash } from './common';
 
 const platforms = {
   darwin: 'ioreg -rd1 -c IOPlatformExpertDevice',
-  ia32: '%windir%\\System32\\cmd.exe \/c %windir%\\System32\\REG ' +
+  ia32: '%windir%\\sysnative\\cmd.exe \/c %windir%\\System32\\REG ' +
   'QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography ' +
-  '/v MachineGuid',
+  '/v MachineGuid', // %windir%\\System32 doesn't work in Win32 environments failing with:
+  // `ERROR: The system was unable to find the specified registry key or value.` message
   x64: '%windir%\\System32\\REG ' +
   'QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography ' +
   '/v MachineGuid',
