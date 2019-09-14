@@ -1,5 +1,5 @@
-// https://github.com/sehrope/node-simple-encryptor/blob/normalize-cipher-name/package.json
-// Copied and converted to typescript initially to apply support for aes-256-cbc
+// Copied and converted to TypeScript initially to apply support for aes-256-cbc
+// Source: https://github.com/sehrope/node-simple-encryptor
 
 import * as crypto from 'crypto';
 import * as scmp from 'scmp'; // add dependency?
@@ -11,7 +11,6 @@ export interface IEncryptorOptions {
   key: string;
   hmac?: boolean;
   debug?: boolean;
-  reviver?: (key: any, value: any) => any;
 }
 
 export class Encryptor {
@@ -22,37 +21,29 @@ export class Encryptor {
   private verifyHmac: boolean;
   private reviver: (key: any, value: any) => any;
 
-  constructor (opts: IEncryptorOptions | string) {
+  constructor(opts: IEncryptorOptions | string) {
     if (typeof opts === 'string') {
-      opts = {
-        key: opts
-      };
+      opts = { key: opts };
     }
-
-    const key = opts.key;
 
     this.verifyHmac = typeof opts.hmac !== 'undefined' ? opts.hmac : true;
     this.debug = typeof opts.debug !== 'undefined' ? opts.debug : false;
-    this.reviver = opts.reviver;
 
-    if (!key || typeof key !== 'string') {
-      throw new Error('a string key must be specified');
+    if (!opts.key || typeof opts.key !== 'string') {
+      throw Error('a string key must be specified');
     }
-    if (key.length < MIN_KEY_LENGTH) {
-      throw new Error('key must be at least ' + MIN_KEY_LENGTH + ' characters long');
-    }
-    if (this.reviver !== undefined && this.reviver !== null && typeof this.reviver !== 'function') {
-      throw new Error('reviver must be a function');
+    if (opts.key.length < MIN_KEY_LENGTH) {
+      throw Error(`key must be at least ${MIN_KEY_LENGTH} characters long`);
     }
 
     // Use SHA-256 to derive a 32-byte key from the specified string.
     // NOTE: We could alternatively do some kind of key stretching here.
-    this.cryptoKey = crypto.createHash('sha256').update(key).digest();
+    this.cryptoKey = crypto.createHash('sha256').update(opts.key).digest();
   }
 
   // Returns the HMAC(text) using the derived cryptoKey
   // Defaults to returning the result as hex.
-  public hmac (text: string, format: crypto.HexBase64Latin1Encoding = 'hex'): string {
+  public hmac(text: string, format: crypto.HexBase64Latin1Encoding = 'hex'): string {
     return crypto.createHmac('sha256', this.cryptoKey).update(text).digest(format);
   }
 
@@ -65,7 +56,7 @@ export class Encryptor {
   // <hmac>             : Optional HMAC
   // <iv>               : Randomly generated initailization vector
   // <encryptedJson>    : The encrypted object
-  public encrypt (obj: any): string {
+  public encrypt(obj: any): string {
     const json = JSON.stringify(obj);
 
     // First generate a random IV.
@@ -97,7 +88,7 @@ export class Encryptor {
   // NOTE: This function never throws an error. It will instead return null if it cannot decrypt the cipherText.
   // NOTE: It's possible that the data decrypted is null (since it's valid input for encrypt(...)).
   //       It's up to the caller to decide if the result is valid.
-  public decrypt (cipherText: string): string | null {
+  public decrypt(cipherText: string): string | null {
     if (!cipherText) {
       return null;
     }
@@ -110,7 +101,7 @@ export class Encryptor {
         // Calculate the actual HMAC of the message:
         const actualHmac = this.hmac(cipherText);
         if (!scmp(Buffer.from(actualHmac, 'hex'), Buffer.from(expectedHmac, 'hex'))) {
-          throw new Error('HMAC does not match');
+          throw Error('HMAC does not match');
         }
       }
 
@@ -126,10 +117,10 @@ export class Encryptor {
 
       // Return the parsed object:
       return JSON.parse(json, this.reviver);
-    } catch (e) {
+    } catch (error) {
       // If we get an error log it and ignore it. Decrypting should never fail.
       if (this.debug) {
-        console.error('Exception in decrypt (ignored): %s', e);
+        console.error(`Exception in decrypt (ignored): ${error}`);
       }
       return null;
     }
