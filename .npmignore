@@ -6,3 +6,5 @@ src/
 docker/
 tsconfig.json
 tslint.json
+.dockerignore
+azure-pipelines.yml
