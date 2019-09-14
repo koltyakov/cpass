@@ -1,13 +1,12 @@
-import * as simple from 'simple-encryptor';
-
 import { hash } from './utils/common';
 import { machineIdSync } from './utils/machineId';
 import { networkId } from './utils/networkId';
+import { Encryptor } from './utils/encryptor';
 
 export class Cpass {
 
   private machineId: string;
-  private encryptor: any;
+  private encryptor: Encryptor;
 
   constructor (masterKey?: string) {
     if (typeof masterKey !== 'undefined' && masterKey !== null) {
@@ -15,7 +14,7 @@ export class Cpass {
     } else {
       this.machineId = this.getMachineId();
     }
-    this.encryptor = this.encryptor || (simple as any)(this.machineId);
+    this.encryptor = this.encryptor || new Encryptor(this.machineId);
   }
 
   public encode (unsecured: string): string {

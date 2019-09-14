@@ -1,6 +1,6 @@
 {
   "name": "cpass",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Simplified secured password two-ways encryption",
   "main": "./dist/index.js",
   "typings": "./dist/index",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/koltyakov/cpass#readme",
   "dependencies": {
-    "simple-encryptor": "^3.0.0"
+    "scmp": "^2.0.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
