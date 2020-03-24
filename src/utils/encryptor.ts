@@ -2,7 +2,7 @@
 // Source: https://github.com/sehrope/node-simple-encryptor
 
 import * as crypto from 'crypto';
-import * as scmp from 'scmp'; // add dependency?
+import * as scmp from 'scmp';
 
 // Arbitrary min length, nothing should shorter than this:
 const MIN_KEY_LENGTH = 16;
@@ -106,7 +106,7 @@ export class Encryptor {
       }
 
       // Extract the IV from the beginning of the message:
-      const iv = new Buffer(cipherText.substring(0,32), 'hex');
+      const iv = Buffer.from(cipherText.substring(0, 32), 'hex');
       // The remaining text is the encrypted JSON:
       const encryptedJson = cipherText.substring(32);
 
