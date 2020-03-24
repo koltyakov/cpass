@@ -3,13 +3,8 @@ import { hash } from './common';
 
 const platforms = {
   darwin: 'ioreg -rd1 -c IOPlatformExpertDevice',
-  ia32: '%windir%\\sysnative\\cmd.exe \/c %windir%\\System32\\REG ' +
-  'QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography ' +
-  '/v MachineGuid', // %windir%\\System32 doesn't work in Win32 environments failing with:
-  // `ERROR: The system was unable to find the specified registry key or value.` message
-  x64: '%windir%\\System32\\REG ' +
-  'QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography ' +
-  '/v MachineGuid',
+  ia32: '%windir%\\sysnative\\cmd.exe \/c %windir%\\System32\\REG QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography /v MachineGuid',
+  x64: '%windir%\\System32\\REG QUERY HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography /v MachineGuid',
   linux: 'cat /var/lib/dbus/machine-id /etc/machine-id 2> /dev/null || :'
 };
 
@@ -52,19 +47,19 @@ const getExecCommand = (): string => {
 };
 
 export const machineIdSync = (original: boolean = true): string => {
-  let id: string = expose(execSync(getExecCommand()).toString());
+  const id: string = expose(execSync(getExecCommand()).toString());
   return original ? id : hash(id);
 };
 
 export const machineId = (original: boolean = true): Promise<string> => {
-  return new Promise((resolve: Function, reject: Function): Object => {
-    return exec(getExecCommand(), {}, (err: any, stdout: any, stderr: any) => {
+  return new Promise((resolve, reject) => {
+    return exec(getExecCommand(), {}, (err, stdout) => {
       if (err) {
         return reject(
           new Error(`Error while obtaining machine id: ${err.stack}`)
         );
       }
-      let id: string = expose(stdout.toString());
+      const id: string = expose(stdout.toString());
       return resolve(original ? id : hash(id));
     });
   });

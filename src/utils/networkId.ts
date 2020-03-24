@@ -3,10 +3,10 @@ import { hash } from './common';
 
 export const networkIds = (original: boolean = true): string[] => {
   const networkIntfs = networkInterfaces() || {};
-  let netIds: string[] = [];
+  const netIds: string[] = [];
   Object.keys(networkIntfs).forEach(intfsProp => {
     Object.keys(networkIntfs[intfsProp]).forEach(adapterProp => {
-      let iNet = networkIntfs[intfsProp][adapterProp];
+      const iNet = networkIntfs[intfsProp][adapterProp];
       if (iNet && iNet.address.length && !iNet.internal && iNet.mac !== '00:00:00:00:00:00') {
         if (netIds.indexOf(iNet.mac) === -1) {
           netIds.push(iNet.mac);
@@ -21,6 +21,6 @@ export const networkIds = (original: boolean = true): string[] => {
 };
 
 export const networkId = (original: boolean = true): string => {
-  let netId: string = networkIds(original)[0];
+  const netId: string = networkIds(original)[0];
   return original ? netId : hash(netId);
 };
