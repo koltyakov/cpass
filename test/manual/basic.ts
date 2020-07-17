@@ -1,4 +1,4 @@
-import { Cpass } from '../src';
+import { Cpass } from '../../src';
 
 const original = 'secret';
 const cpass = new Cpass('CUSTOM_KEY');
