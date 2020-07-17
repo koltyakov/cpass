@@ -13,13 +13,7 @@ Decripts a 'secure string' to plain password.
 ## Installation
 
 ```bash
-npm install cpass --save-dev
-```
-
-or
-
-```bash
-yarn add cpass --dev
+npm install cpass
 ```
 
 ## Usage
@@ -32,10 +26,10 @@ const cpass = new Cpass();
 
 const password = 'password';
 
-let secured = cpass.encode(password);
+const secured = cpass.encode(password);
 // secured: "40bbb043608f54d....MhKghXTcaR2A//yNXg==" - is unique on different machines
 
-let unsecured = cpass.decode(secured);
+const unsecured = cpass.decode(secured);
 // unsecured: 'password'
 ```
 
@@ -47,18 +41,18 @@ const cpass = new Cpass();
 
 const password = 'password';
 
-let secured = cpass.encode(password);
+const secured = cpass.encode(password);
 // secured: "40bbb043608f54d....MhKghXTcaR2A//yNXg==" - is unique on different machines
 
-let unsecured = cpass.decode(secured);
+const unsecured = cpass.decode(secured);
 // unsecured: 'password'
 ```
 
 Decoding plain text will return it back:
 
 ```javascript
-let plainText = 'plain (not encoded text)';
-let decodedText = cpass.decode(plainText);
+const plainText = 'plain (not encoded text)';
+const decodedText = cpass.decode(plainText);
 // decodedText: 'plain (not encoded text)'
 // plainText === decodedText
 ```
